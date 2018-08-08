@@ -64,7 +64,10 @@ func main() {
 
 	result := codeanalysis.AnalysisCode(config)
 
-	result.OutputToFile("/tmp/uml.txt")
+	if opts.OutputFile == "" {
+		opts.OutputFile = "/tmp/uml.txt"
+	}
+	result.OutputToFile(opts.OutputFile)
 
 }
 
